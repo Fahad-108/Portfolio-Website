@@ -10,6 +10,7 @@ document.querySelector("#menu-icon").onclick = () => {
   navbar.classList.toggle("active");
 };
 
+
 // Close menu when clicking on a nav link
 document.querySelectorAll(".navbar a").forEach((link) => {
   link.addEventListener("click", () => {
