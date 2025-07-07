@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
+import image from '/image.jpg'
+import img from '/img.webp'
 import "./style.css";
 const App = () => {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "/script.js"; // path from public folder
-    script.async = true;
-    document.body.appendChild(script);
+  const script = document.createElement("script");
+  script.src = `${import.meta.env.BASE_URL}script.js`;; // Must be in public/
+  script.async = true;
+  document.body.appendChild(script);
 
-    // Clean up
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  return () => {
+    document.body.removeChild(script);
+  };
+}, []);
 
   return (
     <>
@@ -65,7 +66,7 @@ const App = () => {
         <div className="home-img">
           <div className="glowing-circle">
             <div className="image">
-              <img src="/image.jpg" alt="Fahad Raza" />
+              <img src={image} alt="Fahad Raza" />
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@ const App = () => {
         </h2>
         <div className="about-content">
           <div className="about-img">
-            <img src="/img.webp" alt="Working on code" />
+            <img src={img} alt="Working on code" />
           </div>
           <div className="about-text">
             <h3>Passionate Full-Stack Developer</h3>
